@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JSON Project</title>
+    <style>
+    	html{
+    	   background-color: lightslategray;
+    	   text-align: center;
+    	}
+    	#greeting{
+    	   font-family: Georgia;
+           color: black;
+    	   font-size: 80px;
+    	}
+	.startButtons {
+	   background-color: #555555;
+	   border: none;
+	   color: white;
+	   height: 150px;
+	   width: 490px;
+	   text-align: center;
+	   text-decoration: none;
+	   display: inline-block;
+	   font-size: 25px;
+	   margin: 4px 2px;
+  	   cursor: pointer;
+  	   display: block;
+	}
+	.buttons{
+	   background-color: #555555;
+	   border: none;
+	   color: white;
+	   height: 100px;
+	   width: 390px;
+	   text-align: center;
+	   text-decoration: none;
+	   display: inline-block;
+	   font-size: 25px;
+	   margin: 4px 2px;
+  	   cursor: pointer;
+	}
+	#container{
+	   margin-left: 32%;
+	}
+	#wrapper, #wrapper2{
+	   text-align: center;
+	   display: none;
+	}
+    </style>
+  </head>
+  <body>
+  	<h1 id="greeting">Welcome! Would you like to...</h1>
+  	<div id="container">
+  		<button class="startButtons" id="signup">Sign Up</button><br>
+  		<button class="startButtons" id="login">Log In</button>
+  	</div>
+  	<div id="wrapper">
+  		<h1 style="font-size: 50px;">Make an account</h1>
+  		<input type="text" style="height: 100px; font-size: 80px; width: 500px;" id="username" placeholder="Username" autocomplete="new-password"><br><br>
+  		<input type="password" style="height: 100px; font-size: 80px; width: 500px;" id="password" placeholder="Password" autocomplete="new-password"><br><br>	
+    		<button id="confirm" class="buttons">Confirm</button><br>
+    		<button id="return" class="buttons">Return</button>
+  	</div>
+  	<div id="wrapper2">
+  		<h1 style="font-size: 50px;">Log in to an existing account</h1>
+  		<input type="text" style="height: 100px; font-size: 80px; width: 500px;" id="logusername" placeholder="Username" autocomplete="new-password"><br><br>
+  		<input type="password" style="height: 100px; font-size: 80px; width: 500px;" id="logpassword" placeholder="Password" autocomplete="new-password"><br><br>	
+    		<button id="logging" class="buttons">Login</button><br>
+    		<button id="return2" class="buttons">Return</button>
+  	</div>
+  	<script>
+  	var username, password, logusername, logpassword, unique, uniqueID;
+  	var loginUsernames = [];
+  	var loginPasswords = [];
+  	   document.getElementById("login").onclick = function(){
+  	      document.getElementById("container").style.display = "none";
+  	      document.getElementById("greeting").style.display = "none";
+  	      document.getElementById("wrapper2").style.display = "block";
+  	   }
+  	   document.getElementById("signup").onclick = function(){
+  	      document.getElementById("container").style.display = "none";
+  	      document.getElementById("greeting").style.display = "none";
+  	      document.getElementById("wrapper").style.display = "block";
+  	   }
+  	   document.getElementById("confirm").onclick = function(){
+  	      if(document.getElementById("username").value == "" || document.getElementById("password").value == ""){
+  	      	 alert("Write a username or password");
+  	      }else{
+  	      	 username = document.getElementById("username").value;
+  	      	 password = document.getElementById("password").value;
+                 localStorage.setItem(username, username);
+                 localStorage.setItem(password, password);
+                 uniqueID = "special";
+                 unique = document.createElement('button');
+		 unique.setAttribute("id", uniqueID);
+		 //Not working :/
+	      	 //document.getElementById(uniqueID).style.display = "none";
+	         if(confirm("Do you want this login?\n" + "Username: " + localStorage.getItem(username) + "\nPassword: " + localStorage.getItem(password))) {
+		     alert("Saved");
+		 }else{
+		    localStorage.removeItem(username);
+		    localStorage.removeItem(password);
+		 }
+	      }        
+	   }
+	   document.getElementById("logging").onclick = function(){
+	   	logusername = document.getElementById("logusername").value;
+	   	logpassword = document.getElementById("logpassword").value;
+		if(logusername == username && logpassword == password){
+		   alert("You've logged in" + " " + uniqueID);
+	      	   document.getElementById("wrapper2").style.display = "none";
+	      	   document.getElementById(uniqueID).style.display = "block";
+		}else{
+		   alert("Either your username or password is wrong");
+		}
+	   }
+	   document.getElementById("return").onclick = function(){
+	      document.getElementById("container").style.display = "block";
+	      document.getElementById("greeting").style.display = "block";
+	      document.getElementById("wrapper").style.display = "none";
+	      document.getElementById("wrapper2").style.display = "none";
+	      document.getElementById("username").value = "";
+	      document.getElementById("password").value = "";
+	      document.getElementById("logusername").value = "";
+	      document.getElementById("logpassword").value = "";
+	   }
+	   document.getElementById("return2").onclick = function(){
+	      document.getElementById("container").style.display = "block";
+	      document.getElementById("greeting").style.display = "block";
+	      document.getElementById("wrapper").style.display = "none";
+	      document.getElementById("wrapper2").style.display = "none";
+	      document.getElementById("username").value = "";
+	      document.getElementById("password").value = "";
+	      document.getElementById("logusername").value = "";
+	      document.getElementById("logpassword").value = "";
+	   }
+  	</script>
+  </body>
+</html>

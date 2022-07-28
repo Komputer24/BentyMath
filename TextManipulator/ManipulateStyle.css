@@ -1,0 +1,89 @@
+.boxleft{
+    border: 1px solid black;
+    width: 48%;
+    float: left;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+.boxright{
+    border: 1px solid black;
+    width: 48%;
+    float: right;
+    border-radius: 5px;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+body{
+    background-color: #87CEFA;
+    font-family: sans-serif;
+}
+textarea {
+    width: 350px;
+    height: 180px;
+    resize: none;
+}
+.resultBorder{
+    border: 2px solid black; 
+    float: right; 
+    width: 270px; 
+    height: 280px;
+    overflow: auto;
+    background-color: blue;
+    color: white;
+}	
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: #3e8e41}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+.clear{
+  font-size: 30px; 
+  margin-top: -65px;
+  margin-left: 20px;
+}
+.copyTextBox{
+  margin-left: 141px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color:#555555;
+  color:white;
+  padding:10px;
+  border: none;
+}
+.copyResultBox{
+  float: right;
+  margin-right: 95px;
+  font-size: 20px;
+  border-radius: 50%;
+  background-color:#555555;
+  color:white;
+  padding:10px;
+  border: none;
+}
+.boxStyle{
+  font-size: 30px;
+  width: 130px;
+}
+#replacerStyle{
+  margin-right:140px;
+  margin-bottom: 20px;
+  font-size: 30px;
+}

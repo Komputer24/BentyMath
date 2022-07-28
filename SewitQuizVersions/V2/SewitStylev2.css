@@ -1,0 +1,116 @@
+body {
+	font-family: 'Lato', sans-serif;
+}
+.questions{
+    font-size: 20px;
+}
+input[type='radio'] {
+    transform: scale(2); 
+}
+
+#quizName{
+    margin-left: 10px;
+    margin-bottom: 8px;
+	background: #90fb99;
+	padding: 10px 20px 10px 20px;
+	width:890px;
+	border-radius: 20px;
+}
+.quiz {
+	margin-left: 10px;
+	background: #3cb1ff;
+	padding: 10px 20px 10px 20px;
+	width: 420px;
+	border-radius: 20px;
+	float: left;
+    margin-bottom: 10px;
+}
+
+input {
+	margin-bottom: 20px;
+	display: block;
+}
+#button {
+	background: green;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	font-size: 16px;
+	transition-duration: .5s;
+	margin-top: 15px;
+    height: 100px;
+    width: 400px;
+
+}
+
+#button:hover {
+	background: white;
+	border: 1px solid green;
+	color: black;
+	cursor: pointer;
+
+}
+#retry{
+	background: blue;
+	border: none;
+	border-radius: 5px;
+	padding: 10px;
+	color: white;
+	font-size: 40px;
+	transition-duration: .5s;
+	margin-top: 15px;
+    height: 100px;
+    width: 400px;
+    display: none;
+    margin-left: 10px;
+}
+#retry:hover{
+	background: white;
+	border: 1px solid blue;
+	color: black;
+	cursor: pointer;
+}
+
+#after_submit {
+	background: #ff5459;
+	padding: 10px 20px 10px 20px;
+	width: 420px;
+	border-radius: 20px;
+	float: left;
+	margin-left: 10px;
+	font-size: 30px;
+    text-align: center;
+}
+
+#picture {
+	width: 375px;
+	height: 245px;
+}
+
+#abukaImg{
+    transform: rotate(90deg);
+    height: 280px;
+    width: 280px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    float: left;
+}
+#imagedefault{
+    height: 280px;
+    width: 280px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    float: left;
+}
+input{
+	display: inline;
+    margin-left: 12px;
+} 
+#ankankgif, #ankankgif1, #ankankgif2, #ankankgif3, #ankankgif4{
+    display: none;
+    height: 100px;
+}#correctgif, #correctgif1, #correctgif2, #correctgif3, #correctgif4{
+    display: none;
+    height: 100px;
+}

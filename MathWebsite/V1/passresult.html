@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <title>PASSED</title>
+ <audio id="cheer">
+     <source src="C:\Users\Kaleab\Downloads\Crowd Cheering Sound Effect (download).mp3" type="audio/mpeg">
+ </audio>   
+ <style>
+     body{
+      background-color: black;
+      font-family: Comic Sans MS;
+      color: gray;
+      text-align: center;
+     }
+     #final{
+      border: 3px solid lightgray;
+      width: 680px;
+      height: 320px;
+      border-radius: 8px;
+      color: green;
+      display: inline-block;
+     }
+     #print, #retry{
+      background-color: gray;
+      border: none;
+      color: black;
+      font-weight: bold;
+      padding: 30px 45px;
+      text-align: center;
+      font-size: 30px;
+      font-family: Comic Sans MS;
+     }
+ </style>
+ <script>
+  function retry(){
+      location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V1/startpage.html");
+  } 
+  function pass(){
+    document.getElementById("cheer").currentTime = 1.5;
+    document.getElementById("cheer").play();
+  }
+ </script>
+</head>    
+<body id="body" onload="pass()">
+<div id="container" style="text-align: center;">
+    <h1 style="; margin-top: 20px;">Result:</h1>
+    <h1 style="margin-top: 20px; font-size: 40px;">10 of 10</h1>
+    <div id="final">
+        <h1 style="font-size: 42px; margin-bottom: -60px;">Terrific!</h1>
+        <h1 style="font-size: 120px;">100%</h1>
+    </div>
+</div>
+<button id="print" style="margin-top: 10px; float: left;" onclick="print()">PRINT</button>
+<button id="retry" style="margin-top: 10px; float: right;" onclick="retry()">RETRY</button>
+<h2 style="text-align: center; color: green; font-size: 30px;">Congratulations!</h2>
+</body>
+</html>

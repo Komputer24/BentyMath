@@ -1,0 +1,24 @@
+body{
+      background-color: black;
+      font-family: Comic Sans MS;
+      color: gray;
+      text-align: center;
+}
+#final{
+      border: 3px solid lightgray;
+      width: 680px;
+      height: 320px;
+      border-radius: 8px;
+      color: green;
+      display: inline-block;
+}
+#print, #retry{
+      background-color: gray;
+      border: none;
+      color: black;
+      font-weight: bold;
+      padding: 30px 45px;
+      text-align: center;
+      font-size: 30px;
+      font-family: Comic Sans MS;
+}

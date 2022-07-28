@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>SimpyMath</title>
+ <style>
+     #body{
+        background-color: #101010;
+        font-family: Comic Sans MS;
+        color: gray;
+        text-align: center;
+     }
+     #name {
+        width: 500px;
+        height: 100px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: none;
+        background-color: gray;
+        color: white;
+        margin-top: 50px;
+        font-size: 70px;
+        font-family: Comic Sans MS;
+        border-radius: 9px;
+     }
+     .round{
+        width: 130px;
+        height: 130px;
+        font-size: 90px;
+        font-family: Comic Sans MS;
+        border-radius: 50%;
+        margin: 10px;
+        box-shadow: 20px;
+        border: none;
+        box-shadow: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #999;
+     }
+     #start{
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        color: greenyellow;
+        text-align: center;
+        text-decoration: none;
+        font-size: 40px;
+        cursor: pointer;
+        width: 200px;
+        height: 100px;
+        vertical-align: middle;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #666;
+     }
+     /*.round:hover, .roundlevels:hover {
+        background-color: green;
+        color: white;
+     }*/
+     .roundlevels{
+        width: 70px;
+        height: 70px;
+        font-size: 40px;
+        font-family: Comic Sans MS;
+        border-radius: 50%;
+        margin: 10px;
+        box-shadow: 20px;
+        border: none;
+        box-shadow: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #999;
+        margin-top: 20px;
+     }
+     /*#lvl1{
+        background-color: darkgreen;
+        color: black;
+     }*/
+     #start:hover{
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+     }
+     .round:focus{
+         outline: none;
+     }
+     .roundlevels:focus{
+         outline: none;
+     }
+     #start:focus{
+         outline: none;
+     }
+     /*#add{
+        background-color: darkgreen;
+        color: black;
+     }*/
+     /*
+     #subtract{
+        background-color: lawngreen;
+        color: black;
+     }
+     #subtract:hover{
+        background-color: yellow;
+        color: white;
+     }
+     #divide{
+        background-color: darkblue;
+        color: black;
+     }
+     #divide:hover{
+        background-color: blue;
+        color: white;
+     }
+     #multiply{
+        background-color: darkred;
+        color: black;
+     }
+     #multiply:hover{
+        background-color: red;
+        color: white;
+     }
+     */
+ </style>
+ <script>
+  var slctedOp = false;
+  var slctedLvl = false;;
+  var slctOp = [false, false, false, false];
+  var slctLvl = [false, false, false, false, false, false, false, false, false, false];
+  var checkOp = 2;
+  var boxname;
+  function pressed(id){
+        document.getElementById(id).style.backgroundColor = "darkgreen";
+        document.getElementById(id).style.transform = "translateY(4px)";
+        document.getElementById(id).style.boxShadow = "0 3px #666";
+        document.getElementById(id).style.color = "white"; 
+  }
+  function unpressed(id){
+        document.getElementById(id).style.backgroundColor = "lightgray";
+        document.getElementById(id).style.transform = "translateY(0px)";
+        document.getElementById(id).style.boxShadow = "0 6px #999";
+        document.getElementById(id).style.color = "black";   
+  }
+  function opChoose(num){
+        // Checks if one is selected
+        slctedOp = true;
+        // Checks which lvl is selected
+        for(var i = 0; i < slctOp.length; i++){
+            //unpressed(`op${i}`);
+            slctOp[i] = false;
+        }
+        slctOp[num] = true;
+        pressed(`op${num}`);
+  }
+  function lvlChoose(num){
+        // Checks if one is selected
+        slctedLvl = true;
+        // Checks which lvl is selected
+        for(var i = 0; i < slctLvl.length; i++){
+            unpressed(`lvl${i}`);
+            slctLvl[i] = false;
+        }
+        slctLvl[num] = true;
+        pressed(`lvl${num}`);
+  }  
+     
+  function startQuiz(){
+      boxname = document.getElementById("name");
+      if(slctedLvl == true && !(boxname.value == "") && slctedOp == true){
+        if(slctOp[0] == true){
+            if(slctLvl[0] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl0.html");
+            }else if(slctLvl[1] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl1.html");
+            }else if(slctLvl[2] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl2.html");
+            }else if(slctLvl[3] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl3.html");
+            }else if(slctLvl[4] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl4.html");
+            }else if(slctLvl[5] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl5.html");
+            }else if(slctLvl[6] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl6.html");
+            }else if(slctLvl[7] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl7.html");
+            }else if(slctLvl[8] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl8.html");
+            }else if(slctLvl[9] == true){
+                location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/mathquizlvl9.html");
+            }
+        }
+      }
+      else{
+         alert("Fill your Name and choose which type of problems you want!");
+      }
+  }
+ document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+        startQuiz();
+    }
+ });
+ function hover(id,num){
+    if(slctLvl[num] == false){
+     document.getElementById(id).style.backgroundColor = 'green';
+     document.getElementById(id).style.color = 'white'; 
+    }
+ }
+ function out(id,num){
+    if(slctLvl[num] == false){
+     document.getElementById(id).style.backgroundColor = 'lightgray';
+     document.getElementById(id).style.color = 'black';  
+    }
+ }
+ function hoverO(id,num){
+    if(slctOp[num] == false){
+     document.getElementById(id).style.backgroundColor = 'green';
+     document.getElementById(id).style.color = 'white'; 
+    }
+ }
+ function outO(id,num){
+    if(slctOp[num] == false){
+     document.getElementById(id).style.backgroundColor = 'lightgray';
+     document.getElementById(id).style.color = 'black';  
+    }
+ }
+ </script>
+</head>
+<body id="body">
+    <input type="text" id="name" placeholder="Name" autofocus="autofocus"><br><br>
+    <button class="round" id="op0" onclick="opChoose(0)" onmouseover="hoverO('op0',0);" onmouseout="outO('op0',0)">+</button>
+    <button class="round" id="op1" onclick="opChoose(1)" onmouseover="hoverO('op1',1);" onmouseout="outO('op1',1)" disabled>-</button>
+    <button class="round" id="op2" onclick="opChoose(2)" onmouseover="hoverO('op2',2);" onmouseout="outO('op2',2)" disabled>÷</button>
+    <button class="round" id="op3" onclick="opChoose(3)" onmouseover="hoverO('op3',3);" onmouseout="outO('op3',3)" disabled>x</button>
+    <br>
+    <button class="roundlevels" id="lvl0" onclick="lvlChoose(0)" onmouseover="hover('lvl0',0)" onmouseout="out('lvl0',0)">0</button>
+    <button class="roundlevels" id="lvl1" onclick="lvlChoose(1)" onmouseover="hover('lvl1',1)" onmouseout="out('lvl1',1)">1</button>
+    <button class="roundlevels" id="lvl2" onclick="lvlChoose(2)" onmouseover="hover('lvl2',2)" onmouseout="out('lvl2',2)">2</button>
+    <button class="roundlevels" id="lvl3" onclick="lvlChoose(3)" onmouseover="hover('lvl3',3)" onmouseout="out('lvl3',3)">3</button>
+    <button class="roundlevels" id="lvl4" onclick="lvlChoose(4)" onmouseover="hover('lvl4',4)" onmouseout="out('lvl4',4)">4</button>
+    <button class="roundlevels" id="lvl5" onclick="lvlChoose(5)" onmouseover="hover('lvl5',5)" onmouseout="out('lvl5',5)">5</button>
+    <button class="roundlevels" id="lvl6" onclick="lvlChoose(6)" onmouseover="hover('lvl6',6)" onmouseout="out('lvl6',6)">6</button>
+    <button class="roundlevels" id="lvl7" onclick="lvlChoose(7)" onmouseover="hover('lvl7',7)" onmouseout="out('lvl7',7)">7</button>
+    <button class="roundlevels" id="lvl8" onclick="lvlChoose(8)" onmouseover="hover('lvl8',8)" onmouseout="out('lvl8',8)">8</button>
+    <button class="roundlevels" id="lvl9" onclick="lvlChoose(9)" onmouseover="hover('lvl9',9)" onmouseout="out('lvl9',9)">9</button><br><br>
+    <button id="start" onclick="startQuiz()">START</button><br><br>
+    <footer style="color: gray; text-align: center;"><i>Simple is cute!</i></footer>
+</body>
+</html>

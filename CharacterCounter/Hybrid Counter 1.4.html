@@ -1,0 +1,100 @@
+<!DOCYTPE html>
+<html>
+<head>
+<title>Character Counter 1.3</title>
+<style>
+body{
+background-color: GhostWhite;
+}
+h2 {
+text-align: left;
+}
+
+#container
+{background-color: GhostWhite;
+width: 800px;
+height:800px;
+padding: 5px;
+} 
+
+#txt {
+background-color: GhostWhite;
+position: absolute;
+top: 5px;
+left:10px;
+float: left;
+width: 400px;
+height: 300px;
+padding: 5px;
+text-align: center;
+}
+td{
+border-color:white;
+}
+
+#tbl {
+background-color: AliceBlue;
+position: relative;
+right:-450px;
+top: 5px;
+width: 300px;
+height: 287px;
+overflow-y:scroll;
+padding: 5px;
+}
+
+#graph {
+position: absolute;
+bottom: -80px;
+width: 740px;
+height: 40.8%;
+overflow-x: scroll;
+}
+form{
+left:5px;
+}
+#myCanvas{
+backgroundColor: '#ffffff'
+}
+</style>
+</head>
+<body>
+<!--
+-1.3 adds:
+	-A checkbox that changes how the graph displays data
+	-A print button located in the table div
+	-Changed where the graph heading was, from txt div to a freeroaming header.
+	
+-1.4 adds:
+    -A table that is eight cells wide, instead of two (to allow for Exel editing)
+	
+-1.5 adds:
+-->
+<header style="font-weight: bold;float: right;"><a href="https://bentymathupdated.klebcode.repl.co/index.html">Homepage</a></header>
+<div id="container">
+	<div id="txt">
+		<h3>Write Something Here:</h3>
+	<form name = "textfield">
+	<textarea id = "testinput" cols = "45" rows = "11" placeholder="Type something here"></textarea></br>
+	<input id = "B1" type="button" value="Count" name="B1" onClick="myFunction();"></input>
+	</br></br><input type = "checkbox" id = "myCheckBox1" onClick = "myFunction()">Show Zero Values</input></br>
+	<input type = "checkbox" id = "myCheckBox2" onClick = "myFunction()">Include English Characters</input>
+	</form>
+		<p id = "displayCheckbox"></p>
+	</div>
+	<script src = "HybridJS.js"></script>
+	<div id="tbl">
+		<h3>Freq Table:</h3>
+		<input type = button onclick="newPage()" value = "Open in New Page"></input>
+		<input id = "B2" type="button" value="Print Table" name="B2" onClick="Print('tbl');"></input</br>
+		<p id = "displayTable"></p>
+	</div>
+	<h2>Graph:</h2>
+	<div id="graph">
+	<input type = "checkbox" id = "directPercentage" onClick = "myFunction()">Show Actual Values</input></br>
+	<p></p>
+	<canvas id="myCanvas" width="720" height="200" style="border:1px solid black;"></canvas>
+	</div>
+</div>
+</body>
+</html>

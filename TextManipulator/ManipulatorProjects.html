@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Text Changers</title>
+  	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://bentymathupdated.klebcode.repl.co/TextManipulator/ManipulateStyle.css">
+	<script src="https://bentymathupdated.klebcode.repl.co/TextManipulator/ManipulateScript.js"></script>
+</head>
+
+<body>
+	<header style="float: left;font-weight: bold;">
+		<a href="https://bentymathupdated.klebcode.repl.co/index.html">Homepage</a>
+	</header>
+	<input type="text" id="myInput" style="opacity: 0;pointer-events: none;float: right;">
+	<h1 style="text-align: center;">Text Manipulators</h1>
+	<div class="boxleft">
+		<h1 style="text-align: center;">Backward text changer</h1>
+		<button class="clear" onclick="clearText(1)" style="font-size: 30px; margin-top: -65px; margin-left: 20px;">Clear</button>
+		<br>
+		<button class="copyTextBox" style="margin-left: 141px;font-size: 20px;" onclick="copyInput(1)">Copy</button>
+		<button class="copyResultBox" style="margin-left: 270px;font-size: 20px;" onclick="copyOutput(1)">Copy</button>
+		<br><br>
+		<div class="resultBorder">
+			<h2 style="margin-top: 3px;margin-left: 3px;">Result:</h2>
+			<h5 id="result1" style="margin-top: -20px;margin-left: 3px;">JKI GHI DEF ABC</h5>
+		</div>
+		<textarea id="check1" placeholder="ABC DEF GHI JKL"></textarea>
+		<br><br>
+		<button onclick="changeBackward();" class="button" style="margin-left: 90px;">Manipulate</button>
+	</div>
+
+	<div class="boxright">
+		<h1 style="text-align: center;">Bottom Up Text Changer</h1>
+		<button class="clear" onclick="clearText(2)" style="font-size: 30px; margin-top: -65px; margin-left: 20px;">Clear</button>
+		<br>
+		<button class="copyTextBox" style="margin-left: 141px;font-size: 20px;" onclick="copyInput(2)">Copy</button>
+		<button class="copyResultBox" style="margin-left: 270px;font-size: 20px;" onclick="copyOutput(2)">Copy</button>
+		<br><br>
+		<div class="resultBorder">
+			<h2 style="margin-top: 3px;margin-left: 3px;">Result:</h2>
+			<h5 id="result2" style="margin-top: -20px;margin-left: 3px;">MNF OPQ <br>ABC DEF GHI JKL</h5>
+		</div>
+		<textarea id="check2" placeholder="ABC DEF GHI JKL MNF OPQ"></textarea>
+		<br><br>
+		<button onclick="changeBottomUp(4);" class="button" style="margin-left: 90px;">Manipulate</button>
+	</div>
+
+	<div class="boxleft">
+		<label for="CaseCheck" style="float: right;">Case Sensitive</label>
+		<input type="checkbox" id="CaseCheck" style="float: right;" checked>
+		<h1 style="text-align: center;">Replace Text Changer</h1>
+		<button class="clear" onclick="clearText(3)" style="font-size: 30px; margin-top: -65px; margin-left: 20px;">Clear</button>
+		<div id="replacerStyle" style="float: right;margin-right:60px;">
+			<input type="text" class="boxStyle" id="oldVal1" maxlength="8" placeholder="A"> ==>
+			<input type="text" class="boxStyle" id="newVal1" maxlength="8" placeholder="B">
+			<button onclick="addReplacer()" style="width:35px;height:35px;font-size:25px;">+</button>
+
+			<button onclick="subtractReplacer()" style="width:35px;height:35px;font-size:25px;">-</button>
+
+			<span id="addedRep"></span>
+		</div>
+		<br>
+		<button class="copyTextBox" style="margin-left: 141px;font-size: 20px;" onclick="copyInput(3)">Copy</button>
+		<button class="copyResultBox" style="margin-left: 270px;font-size: 20px;" onclick="copyOutput(3)">Copy</button>
+		<br><br>
+		<div class="resultBorder">
+			<h2 style="margin-top: 3px; margin-left: 3px;">Result:</h2>
+			<h5 id="result3" style="margin-top: -20px;margin-left: 3px;">BBBB BBbb CCcc</h5>
+		</div>
+		<textarea id="check3" placeholder="AAAA BBbb CCcc"></textarea>
+		<br><br>
+		<button onclick="decodeManipulate();" class="button" style="margin-left: 90px;">Manipulate</button>
+	</div>
+
+	<div class="boxright">
+		<h1 style="text-align: center;">Encoding Text Changer</h1>
+		<button class="clear" onclick="clearText(4)" style="font-size: 30px; margin-top: -65px; margin-left: 20px;">Clear</button>
+		<br>
+		<button class="copyTextBox" style="margin-left: 141px;font-size: 20px;" onclick="copyInput(4)">Copy</button>
+		<button class="copyResultBox" style="margin-left: 270px;font-size: 20px;" onclick="copyOutput(4)">Copy</button>
+		<br><br>
+		<div class="resultBorder">
+			<h2 style="margin-top: 3px;margin-left: 3px;">Result:</h2>
+			<h5 id="result4" style="margin-top: -20px;margin-left: 3px;">ǦƱ¶…¨ȞîƱà÷¶Ǣ</h5>
+		</div>
+		<textarea id="check4" placeholder="The Alphabet"></textarea>
+		<br><br>
+		<div style="margin-left: 40px;">
+			<button onclick="encoderPreset();" class="button">Encode</button>
+			<button onclick="decoderPreset();" class="button">Decode</button>
+		</div>
+	</div>
+</body>
+
+</html>

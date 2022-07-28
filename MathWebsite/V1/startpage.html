@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Start Page</title>
+ <style>
+     #body{
+        background-color: #101010;
+        font-family: Comic Sans MS;
+        color: gray;
+        text-align: center;
+     }
+     #name {
+        width: 500px;
+        height: 100px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: none;
+        background-color: gray;
+        color: white;
+        margin-top: 80px;
+        font-size: 70px;
+        font-family: Comic Sans MS;
+        border-radius: 9px;
+     }
+     .round{
+        width: 130px;
+        height: 130px;
+        font-size: 90px;
+        font-family: Comic Sans MS;
+        border-radius: 50%;
+        margin: 10px;
+        box-shadow: 20px;
+        border: none;
+        box-shadow: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #999;
+     }
+     #start{
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        color: greenyellow;
+        text-align: center;
+        text-decoration: none;
+        font-size: 40px;
+        cursor: pointer;
+        width: 200px;
+        height: 100px;
+        vertical-align: middle;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #666;
+     }
+     .round:hover {
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+        background-color: #f44336;
+        color: white;
+     }
+     #start:hover{
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+     }
+     .round:focus{
+         outline: none;
+     }
+     #start:focus{
+         outline: none;
+     }
+     #add{
+        background-color: darkgreen;
+     }
+     #add:hover{
+        background-color: green;
+        color: white;
+     }/*
+     #subtract{
+        background-color: yellowgreen;
+     }
+     #subtract:hover{
+        background-color: yellow;
+        color: white;
+     }
+     #divide{
+        background-color: darkblue;
+     }
+     #divide:hover{
+        background-color: blue;
+        color: white;
+     }
+     #multiply{
+        background-color: darkred;
+     }
+     #multiply:hover{
+        background-color: red;
+        color: white;
+     }*/
+ </style>
+ <script>
+  var selected;
+  var check = 2;
+  var boxname;
+  //var elem = document.documentElement;
+  function addButtonClicked(){
+      if((check % 2) == 0){
+        selected = true
+        document.getElementById("add").style.backgroundColor = "darkgreen";
+        document.getElementById("add").style.transform = "translateY(4px)";
+        document.getElementById("add").style.boxShadow = "0 3px #666";
+        document.getElementById("add").style.color = "white";  
+        check++;
+      }else{
+        selected = false;
+        document.getElementById("add").style.backgroundColor = "green";
+        document.getElementById("add").style.transform = "translateY(0px)";
+        document.getElementById("add").style.boxShadow = "0 6px #666";
+        document.getElementById("add").style.color = "black";  
+        check++
+      }
+  }
+  function startQuiz(){
+      boxname = document.getElementById("name");
+      if(selected == true && !(boxname.value == "")){
+          /*if (elem.webkitRequestFullscreen) { 
+            elem.webkitRequestFullscreen();
+          }*/
+          location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V1/mathquiz.html");
+      }
+      else{
+         alert("Do the actions above first");
+      }
+  }
+ document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+        startQuiz();
+    }
+ });
+ </script>
+</head>
+<body id="body">
+    <input type="text" id="name" placeholder="Name" autofocus="autofocus"><br><br><br><br>
+    <button class="round" id="add" onclick="addButtonClicked()">+</button>
+    <button class="round" id="subtract" disabled>-</button>
+    <button class="round" id="divide" disabled>÷</button>
+    <button class="round" id="multiply" disabled>x</button><br><br><br>
+    <button id="start" onclick="startQuiz()">START</button><br><br>
+    <footer style="color: gray; text-align: center;"><i>Simple is cute!</i></footer>
+</body>
+</html>

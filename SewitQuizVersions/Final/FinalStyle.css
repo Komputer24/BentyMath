@@ -1,0 +1,67 @@
+#container{
+    text-align: center;
+    height: 50%;
+    width: 450px;
+    border: 3px blue solid;
+    border-radius: 20px;
+    background-color: cadetblue;
+}
+#container1{
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    height: 50%;
+    width: 450px;
+    border: 3px blue solid;
+    border-radius: 20px;
+    background-color: cadetblue;
+}
+#responder{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    word-wrap:break-word;
+}
+#sewitImg{  
+    margin-top: -40px; 
+    margin-bottom: -20px; 
+    height: 280px;
+    width: 230px ;
+    border-radius: 12px;
+    transform: rotate(90deg);
+}
+#box{
+    border: 2px #3CBC8D solid;
+    background-color: #3CBC8D;
+    margin-top: 10px;
+    border-radius: 4px;
+    width: 99%;
+    height: 50px;    
+    font-size: 45px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+hr{
+  padding-top: 0px;
+  border: 2px dashed green;
+  border-radius: 5px;
+}
+.letters{
+  border: 2px solid aqua;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  width: 35px;
+  text-align: center;
+}
+#theSpace{
+  border: 2px solid aqua;
+  background-color: green;
+  color: white;
+  font-size: 20px;
+  height: 30px;
+  width: 35px;
+  text-align: center;
+  width: 50%;
+}

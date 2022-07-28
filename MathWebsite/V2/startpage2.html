@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Start Page</title>
+ <style>
+     #body{
+        background-color: #101010;
+        font-family: Comic Sans MS;
+        color: gray;
+        text-align: center;
+     }
+     #name {
+        width: 500px;
+        height: 100px;
+        padding: 12px 20px;
+        box-sizing: border-box;
+        border: none;
+        background-color: gray;
+        color: white;
+        margin-top: 50px;
+        font-size: 70px;
+        font-family: Comic Sans MS;
+        border-radius: 9px;
+     }
+     .round{
+        width: 130px;
+        height: 130px;
+        font-size: 90px;
+        font-family: Comic Sans MS;
+        border-radius: 50%;
+        margin: 10px;
+        box-shadow: 20px;
+        border: none;
+        box-shadow: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #999;
+     }
+     #start{
+        background-color: black;
+        border-radius: 10px;
+        border: none;
+        color: greenyellow;
+        text-align: center;
+        text-decoration: none;
+        font-size: 40px;
+        cursor: pointer;
+        width: 200px;
+        height: 100px;
+        vertical-align: middle;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #666;
+     }
+     .round:hover {
+        background-color: green;
+        color: white;
+     }
+     .roundlevels{
+        width: 70px;
+        height: 70px;
+        font-size: 40px;
+        font-family: Comic Sans MS;
+        border-radius: 50%;
+        margin: 10px;
+        box-shadow: 20px;
+        border: none;
+        box-shadow: 10px;
+        text-align: center;
+        padding-bottom: 10px;
+        transition-duration: 0.4s;
+        box-shadow: 0 5px #999;
+        margin-top: 20px;
+     }
+     .roundlevels:hover {
+        background-color: green;
+        color: white;
+     }
+     /*#lvl1{
+        background-color: darkgreen;
+        color: black;
+     }*/
+     #start:hover{
+        box-shadow: 0 3px #666;
+        transform: translateY(4px);
+     }
+     .round:focus{
+         outline: none;
+     }
+     .roundlevels:focus{
+         outline: none;
+     }
+     #start:focus{
+         outline: none;
+     }
+     /*#add{
+        background-color: darkgreen;
+        color: black;
+     }*/
+     /*
+     #subtract{
+        background-color: lawngreen;
+        color: black;
+     }
+     #subtract:hover{
+        background-color: yellow;
+        color: white;
+     }
+     #divide{
+        background-color: darkblue;
+        color: black;
+     }
+     #divide:hover{
+        background-color: blue;
+        color: white;
+     }
+     #multiply{
+        background-color: darkred;
+        color: black;
+     }
+     #multiply:hover{
+        background-color: red;
+        color: white;
+     }
+     */
+ </style>
+ <script>
+  var slctOperator;
+  var slctLvl;
+  var slctLvl1, slctLvl2, slctLvl3, slctLvl4, slctLvl5, slctLvl6, slctLvl7, slctLvl8, slctLvl9;
+     
+  var checkOp = 2;
+  var checkLvl1 = 2;
+  var checkLvl2 = 2;
+  var checkLvl3 = 2;
+  var checkLvl4 = 2;
+  var checkLvl5 = 2;
+  var checkLvl6 = 2;
+  var checkLvl7 = 2;
+  var checkLvl8 = 2;
+  var checkLvl9 = 2;
+  var boxname;
+  function down(id){
+        document.getElementById(id).style.backgroundColor = "darkgreen";
+        document.getElementById(id).style.transform = "translateY(4px)";
+        document.getElementById(id).style.boxShadow = "0 3px #666";
+        document.getElementById(id).style.color = "white"; 
+  }
+  function notdown(id, num){
+        document.getElementById(id).style.backgroundColor = "lightgray";
+        document.getElementById(id).style.transform = "translateY(0px)";
+        document.getElementById(id).style.boxShadow = "0 6px #999";
+        document.getElementById(id).style.color = "black";
+  }
+  function operationChoose(id){
+      if((checkOp % 2) == 0){
+        slctOperator = true
+        document.getElementById(id).style.backgroundColor = "darkgreen";
+        document.getElementById(id).style.transform = "translateY(4px)";
+        document.getElementById(id).style.boxShadow = "0 3px #666";
+        document.getElementById(id).style.color = "white";  
+        checkOp++;
+      }else{
+        slctOperator = false;
+        document.getElementById(id).style.backgroundColor = "lightgray";
+        document.getElementById(id).style.transform = "translateY(0px)";
+        document.getElementById(id).style.boxShadow = "0 6px #999";
+        document.getElementById(id).style.color = "black";  
+        checkOp++
+      }
+  }
+  function lvlChoose1(){
+      if((checkLvl1 % 2) == 0){
+        slctLvl = true;
+        
+        slctLvl1 = true; 
+        slctLvl2 = false;
+        slctLvl3 = false;
+        down("lvl1"); 
+        notdown("lvl2");  
+        notdown("lvl3");  
+        checkLvl1++;
+      }else{
+        slctLvl = false;
+          
+        slctLvl1 = false;
+        notdown("lvl1");
+        checkLvl1++;
+      }
+  }
+  function lvlChoose2(){
+      if((checkLvl2 % 2) == 0){
+        slctLvl = true;
+          
+        slctLvl1 = false;
+        slctLvl2 = true;
+        slctLvl3 = false;
+        notdown("lvl1");
+        down("lvl2");
+        notdown("lvl3");
+        checkLvl2++;
+      }else{
+        slctLvl = false;
+          
+        slctLvl2 = false;
+        notdown("lvl2"); 
+        checkLvl2++;
+      }
+  }
+  function lvlChoose3(){
+      if((checkLvl3 % 2) == 0){
+        slctLvl = true;
+          
+        slctLvl1 = false;
+        slctLvl2 = false;
+        slctLvl3 = true;
+        slctLvl4 = false;
+        slctLvl5 = false;
+        slctLvl6 = false;
+        slctLvl7 = false;
+        slctLvl8 = false;
+        slctLvl9 = false;
+          
+        notdown("lvl1"); checkLvl1 - 1;
+        notdown("lvl2"); checkLvl2 - 1;
+        down("lvl3");
+        notdown("lvl4"); checkLvl4 - 1;
+        notdown("lvl5"); checkLvl5 - 1;
+        notdown("lvl6"); checkLvl6 - 1;
+        notdown("lvl7"); checkLvl7 - 1;
+        notdown("lvl8"); checkLvl8 - 1;
+        notdown("lvl9"); checkLvl9 - 1;
+        checkLvl3++;
+      }else{
+        slctLvl = false;
+          
+        slctLvl3 = false;
+        notdown("lvl3"); 
+        checkLvl3++;
+      }
+  }
+  function startQuiz(){
+      boxname = document.getElementById("name");
+      if(slctLvl == true && !(boxname.value == "") && slctOperator == true){
+        if(slctLvl1 == true){
+            location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V2/mathquizlvl1.html");
+        }else if(slctLvl2 == true){
+            location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V2/mathquizlvl2.html");
+        }
+      }
+      else{
+         alert("Makes sure you filled your Name and choose which type of problems and level you want!");
+      }
+  }
+ document.addEventListener('keydown', function(event) {
+    if(event.keyCode == 13) {
+        startQuiz();
+    }
+ });
+ </script>
+</head>
+<body id="body">
+    <input type="text" id="name" placeholder="Name" autofocus="autofocus"><br><br>
+    <button class="round" id="add" onclick="operationChoose('add')">+</button>
+    <button class="round" id="subtract">-</button>
+    <button class="round" id="divide">÷</button>
+    <button class="round" id="multiply">x</button><br>
+    <button class="roundlevels" id="lvl1" onclick="lvlChoose1()">1</button>
+    <button class="roundlevels" id="lvl2" onclick="lvlChoose2()">2</button>
+    <button class="roundlevels" id="lvl3" onclick="lvlChoose3()">3</button>
+    <button class="roundlevels" id="lvl4" onclick="lvlChoose4()">4</button>
+    <button class="roundlevels" id="lvl5" onclick="lvlChoose5()">5</button>
+    <button class="roundlevels" id="lvl6" onclick="lvlChoose6()">6</button>
+    <button class="roundlevels" id="lvl7" onclick="lvlChoose7()">7</button>
+    <button class="roundlevels" id="lvl8" onclick="lvlChoose8()">8</button>
+    <button class="roundlevels" id="lvl9" onclick="lvlChoose9()">9</button><br><br>
+    <button id="start" onclick="startQuiz()">START</button><br><br>
+    <footer style="color: gray; text-align: center;"><i>Simple is cute!</i></footer>
+</body>
+</html>

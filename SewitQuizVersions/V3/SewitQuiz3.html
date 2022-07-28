@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sewit's Quiz!</title>
+        <script src = "SewitFunctionv3.js"></script>
+        <link rel="stylesheet" href="SewitStylev3.css">
+    </head>
+<body>
+    <audio id="wrongsf">
+            <source src="C:\Users\Kaleab\Downloads\wrongbuzzer.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="rightsf">
+            <source src="C:\Users\Kaleab\Downloads\correctding.mp3" type="audio/mpeg">
+    </audio>
+<h1 id = "quizName">Sewit's Quiz!</h1>
+<div class="questions">
+    <!------------Question 1-------------------->
+    <div class="quiz">
+        <p class = "questions">Q1: Who is this?</p>
+        <img src="C:\Users\Kaleab\Pictures\20190402_184905.jpg" id="abukaImg"/>
+        <form id="mixup"></form>
+        <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif"/>
+        <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif"/>
+    </div>
+    
+    <!------------Question 2-------------------->
+    <div class="quiz">
+    <p class = "questions">Q2: Who is this?</p>
+    <img src="https://pocket.watch/wp-content/uploads/2019/02/slide_games_redtitan.png" class="imagedefault"/>
+    <form id="mixup1"></form>
+    <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif1"/>
+    <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif1"/>
+    </div>
+    <!------------Question 3-------------------->
+    <div class="quiz">
+    <p class = "questions">Q3: Who is this?</p>
+    <img src="https://cdnb.artstation.com/p/assets/images/images/010/002/309/large/camila-caicedo-feoli-catboy.jpg?1522037969" class="imagedefault"/>
+    <form id="mixup2"></form>
+    <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif2"/>
+    <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif2"/>
+    </div>
+    <!------------Question 4-------------------->
+    <div class="quiz">
+    <p class = "questions">Q4: Who is this?</p>
+    <img src="https://yt3.ggpht.com/a-/AAuE7mA1Sl8LOxLB6X0BCdJKgsNDoaNgUxWyK6UlRA=s900-mo-c-c0xffffffff-rj-k-no" class="imagedefault"/>
+    <form id="mixup3"></form>
+    <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif3"/>
+    <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif3"/>
+    </div>
+    <!------------Question 5-------------------->
+    <div class="quiz">
+    <p class = "questions">Q5: Who is this?</p>
+    <img src="https://yt3.ggpht.com/a-/AAuE7mC0gLmTt6XpwVbD7zOggTdbRh3tNOt7_K2C3Q=s900-mo-c-c0xffffffff-rj-k-no" class="imagedefault"/>
+    <form id="mixup4"></form>
+    <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif4"/>
+    <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif4"/>
+    </div>
+    <div id = "after_submit">
+    <button onclick="check(), document.getElementById('button').style.display = 'none'" id="button">Submit</button>
+    <p id = "number_correct" style="font-size: 32px"></p>
+    <p id = "message"style="font-size: 32px"></p>
+    <audio id="aww">
+        <source src="C:\Users\Kaleab\Downloads\Aww Sound Effect.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="meh">
+        <source src="C:\Users\Kaleab\Downloads\Cartoon Sound Effects - Clapping & Laughter.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="yay">
+        <source src="C:\Users\Kaleab\Downloads\applause crowd cheering sound effect.mp3" type="audio/mpeg">
+    </audio>
+        <button onclick="retry()" id="retry">Next</button>
+    </div>
+</div>
+<script>
+(function () {
+    var a1 ='<input type="radio" id="wronga" name="question1" onclick="firstQCheck()"> Kaleab<br>';
+    var a2 = '<input type="radio" id="wrongc" name="question1" onclick="firstQCheck()"> Ababa<br>';
+    var a3 = '<input type="radio" id="wrongb" name="question1" onclick="firstQCheck()"> Sewit<br>';
+    var a4 = '<input type="radio" id="correct" name="question1" onclick="firstQCheck()"> Abuka<br>';
+    var a5 = '<input type="radio" id="wrongd" name="question1" onclick="firstQCheck()"> Tatye<br>';
+
+    var array = [a1, a2, a3, a4, a5];
+
+    function shuffle(arra1) {
+        var ctr = arra1.length, temp, index;
+
+    // While there are elements in the array
+        while (ctr > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+            ctr--;
+    // And swap the last element with it
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1.join("");
+    }
+    document.getElementById("mixup").innerHTML = shuffle(array);
+})();
+(function () {
+    
+    var a1 ='<input type="radio" id="wrongb1" name="question1" onclick="secondQCheck()"> Ryan<br>';
+    var a2 = '<input type="radio" id="wronga1" name="question1" onclick="secondQCheck()"> Titan<br>';
+    var a3 = '<input type="radio" id="wrongc1" name="question1" onclick="secondQCheck()"> Gus<br>';
+    var a4 = '<input type="radio" id="correct1" name="question1" onclick="secondQCheck()"> Red Titan<br>';
+    var a5 = '<input type="radio" id="wrongd1" name="question1" onclick="secondQCheck()"> Kombo<br>';
+
+    var array = [a1, a2, a3, a4, a5];
+
+    function shuffle(arra1) {
+        var ctr = arra1.length, temp, index;
+
+    // While there are elements in the array
+        while (ctr > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+            ctr--;
+    // And swap the last element with it
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1.join("");
+    }
+    document.getElementById("mixup1").innerHTML = shuffle(array);
+})();
+(function () {
+        
+    var a1 ='<input type="radio" id="wrongd2" name="question1" onclick="thirdQCheck()"> Skye<br>';
+    var a2 = '<input type="radio" id="wronga2" name="question1" onclick="thirdQCheck()"> Owlet<br>';
+    var a3 = '<input type="radio" id="wrongb2" name="question1" onclick="thirdQCheck()"> Gekko<br>';
+    var a4 = '<input type="radio" id="wrongc2" name="question1" onclick="thirdQCheck()"> Chase<br>';
+    var a5 = '<input type="radio" id="correct2" name="question1" onclick="thirdQCheck()"> Catboy<br>';
+
+    var array = [a1, a2, a3, a4, a5];
+
+    function shuffle(arra1) {
+        var ctr = arra1.length, temp, index;
+
+    // While there are elements in the array
+        while (ctr > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+            ctr--;
+    // And swap the last element with it
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1.join("");
+    }
+    document.getElementById("mixup2").innerHTML = shuffle(array);
+})();
+(function () {
+    
+    var a1 ='<input type="radio" id="wronga3" name="question1" onclick="fourthQCheck()"> Mommy<br>';
+    var a2 = '<input type="radio" id="correct3" name="question1" onclick="fourthQCheck()"> Kombo<br>';
+    var a3 = '<input type="radio" id="wrongb3" name="question1" onclick="fourthQCheck()"> Panda<br>';
+    var a4 = '<input type="radio" id="wrongc3" name="question1" onclick="fourthQCheck()"> Gus<br>';
+    var a5 = '<input type="radio" id="wrongd3" name="question1" onclick="fourthQCheck()"> Daddy<br>';
+
+    var array = [a1, a2, a3, a4, a5];
+
+    function shuffle(arra1) {
+        var ctr = arra1.length, temp, index;
+
+    // While there are elements in the array
+        while (ctr > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+            ctr--;
+    // And swap the last element with it
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1.join("");
+    }
+    document.getElementById("mixup3").innerHTML = shuffle(array);
+})();
+(function () {
+    var a1 ='<input type="radio" id="correct4" name="question1" onclick="fifthQCheck()"> Gus<br>';
+    var a2 = '<input type="radio" id="wrongb4" name="question1" onclick="fifthQCheck()"> Ryan<br>';
+    var a3 = '<input type="radio" id="wrongc4" name="question1" onclick="fifthQCheck()"> Red Titan<br>';
+    var a4 = '<input type="radio" id="wrongd4" name="question1" onclick="fifthQCheck()"> Shark<br>';
+    var a5 = '<input type="radio" id="wronga4" name="question1" onclick="fifthQCheck()"> Kombo<br>';
+
+    var array = [a1, a2, a3, a4, a5];
+
+    function shuffle(arra1) {
+        var ctr = arra1.length, temp, index;
+
+    // While there are elements in the array
+        while (ctr > 0) {
+    // Pick a random index
+            index = Math.floor(Math.random() * ctr);
+    // Decrease ctr by 1
+            ctr--;
+    // And swap the last element with it
+            temp = arra1[ctr];
+            arra1[ctr] = arra1[index];
+            arra1[index] = temp;
+        }
+        return arra1.join("");
+    }
+    document.getElementById("mixup4").innerHTML = shuffle(array);
+})();
+</script>
+    
+</body>
+</html>

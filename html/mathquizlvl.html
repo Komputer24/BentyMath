@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Addition</title>
+	<audio id="ank">
+		<source src="https://bentymathupdated.klebcode.repl.co/audio/buzzsfx.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="ding">
+		<source src="https://bentymathupdated.klebcode.repl.co/audio/dingsfx.mp3" type="audio/mpeg">
+	</audio>
+	<link rel="stylesheet" href="https://bentymathupdated.klebcode.repl.co/css/quizstyle.css">
+	<script src="https://bentymathupdated.klebcode.repl.co/js/quizscript.js"></script>
+</head>
+
+<body id="body" onload="newQuestion()">
+	<button id="help" onclick="helpBtn()">?</button>
+	<h3 id="hintsLeft">3</h3>
+	<button id="mute" onclick="muteBtn()">🔊</button>
+	<h1 style="color: white; margin-left: 42%;" id="questionNum">Question: 1</h1>
+	<div id="wrap">
+		<div id="num1" class="box"></div>
+		<div id="sign" class="numeral">+</div>
+		<div id="num2" class="box"></div>
+		<div id="equal" class="numeral">=</div>
+		<input type="number" id="answer" autofocus="autofocus"></input>
+		<div style="border: 3px solid gray" id="border">
+			<div id="timer"></div>
+		</div>
+		<h1 id="numTimer" style="font-size: 100px;">50</h1>
+	</div>
+	<br>
+	<button id="check" onclick="checkAnswer()">CHECK</button>
+	<div id="beads" style="font-size: 40px;">
+		<table style="width: 200px; height: 200px;user-select: none;" id="grid">
+			<tr>
+				<td id="sq0" onclick="selected('sq0')">/</td>
+				<td id="sq1" onclick="selected('sq1')">/</td>
+				<td id="sq2" onclick="selected('sq2')">/</td>
+			</tr>
+			<tr>
+				<td id="sq3" onclick="selected('sq3')">/</td>
+				<td id="sq4" onclick="selected('sq4')">/</td>
+				<td id="sq5" onclick="selected('sq5')">/</td>
+			</tr>
+			<tr>
+				<td id="sq6" onclick="selected('sq6')">/</td>
+				<td id="sq7" onclick="selected('sq7')">/</td>
+				<td id="sq8" onclick="selected('sq8')">/</td>
+			</tr>
+		</table>
+		<div id="addGrid">+</div>
+		<table style="width: 200px; height: 200px;user-select: none;" id="grid2">
+			<tr>
+				<td id="sq9" onclick="selected('sq9')">/</td>
+				<td id="sq10" onclick="selected('sq10')">/</td>
+				<td id="sq11" onclick="selected('sq11')">/</td>
+			</tr>
+			<tr>
+				<td id="sq12" onclick="selected('sq12')">/</td>
+				<td id="sq13" onclick="selected('sq13')">/</td>
+				<td id="sq14" onclick="selected('sq14')">/</td>
+			</tr>
+			<tr>
+				<td id="sq15" onclick="selected('sq15')">/</td>
+				<td id="sq16" onclick="selected('sq16')">/</td>
+				<td id="sq17" onclick="selected('sq17')">/</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

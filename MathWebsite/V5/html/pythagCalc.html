@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <title>Pythagorean Calculator</title>
+     <link rel="stylesheet" href="C:\Users\kalea\OneDrive\Desktop\MathWebsite\V5\css\pythagstyle.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script src="file:///C:/Users/kalea/OneDrive/Desktop/MathWebsite/V5/js/pythagscript.js"></script>
+    </head>
+    <body>
+            <input type="number" class="squared" id="aSquared" placeholder="a²" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    type = "number"
+    maxlength = "2"></input>
+            <h1 class="operationSigns" id="additionSign">+</h1>
+            <input type="number" class="squared" id="bSquared" placeholder="b²" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    type = "number"
+    maxlength = "2"></input>
+            <h1 class="operationSigns" id="equalSign">=</h1>
+            <input type="number" class="squared" id="cSquared" placeholder="c²"></input>
+            <button id="solve" onclick="calculate()">Solve</button>
+            <div style="position: absolute;">
+                <img src="https://images.vexels.com/media/users/3/141885/isolated/preview/cc2dcc350d1772f24bee9e0e55e3029a-human-body-man-by-vexels.png" id="rightTri">
+                <h1 id="a">a</h1>
+                <h1 id="b">b</h1>
+                <h1 id="c">c</h1> 
+            </div>
+    </body>
+</html>

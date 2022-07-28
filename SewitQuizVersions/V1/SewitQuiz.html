@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sewit's Quiz!</title>
+        <script src = "SewitFunction.js"></script>
+        <link rel="stylesheet" href="SewitStyle.css">
+    </head>
+    <body>
+    <h1 id = "quizName">Sewit's Quiz!</h1>
+    <form id = "quiz">
+        <audio id="wrongsf">
+            <source src="C:\Users\Kaleab\Downloads\wrongbuzzer.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="rightsf">
+            <source src="C:\Users\Kaleab\Downloads\correctding.mp3" type="audio/mpeg">
+        </audio>
+        <!---------------------Question 1-------------------------------->
+        <p class = "questions">Q1: Who is this?</p>
+        <form id = "quiz1">
+        <img src="C:\Users\Kaleab\Pictures\20190402_184905.jpg" id="abukaImg"/>
+        <input type="radio" id="wronga" name="question1" value="Kaleab" onclick='firstQCheck()'> Kaleab<br>
+        <input type="radio" id="wrongc" name="question1" value="Ababa" onclick="firstQCheck()"> Ababa<br>
+        <input type="radio" id="wrongb" name="question1" value="Sewit" onclick='firstQCheck()'> Sewit<br>
+        <input type="radio" id="correct" name="question1" value="Abuka" onclick='firstQCheck()'> Abuka<br>
+        <input type="radio" id="wrongd" name="question1" value="Tatye" onclick='firstQCheck()'> Tatye<br>
+        <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif"/>
+        <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif"/>
+        </form>
+        <!---------------------Question 2-------------------------------->
+        <form class = "quiz">
+        <p class = "questions">Q2: Who is this?</p>
+        <img src="https://pocket.watch/wp-content/uploads/2019/02/slide_games_redtitan.png" id="imagedefault"/>
+        <input type="radio" id="wrongb1" name="question1" value="Ryan" onclick='secondQCheck()'> Ryan<br>
+        <input type="radio" id="wronga1" name="question1" value="Titan" onclick='secondQCheck()'> Titan<br>
+        <input type="radio" id="correct1" name="question1" value="RT" onclick='secondQCheck()'> Red Titan<br>
+        <input type="radio" id="wrongc1" name="question1" value="Gus" onclick='secondQCheck()'> Gus<br>
+        <input type="radio" id="wrongd1" name="question1" value="Kombo" onclick='secondQCheck()'> Kombo<br>
+        <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif1"/>
+        <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif1"/>
+        </form>
+        <!---------------------Question 3-------------------------------->
+        <form class = "quiz">
+        <p class = "questions">Q3: Who is this?</p>
+        <img src="https://cdnb.artstation.com/p/assets/images/images/010/002/309/large/camila-caicedo-feoli-catboy.jpg?1522037969" id="imagedefault"/>
+        <input type="radio" id="wrongd2" name="question1" value="Skye" onclick='thirdQCheck()'> Skye<br>
+        <input type="radio" id="wronga2" name="question1" value="Owlet" onclick='thirdQCheck()'> Owlet<br>
+        <input type="radio" id="wrongb2" name="question1" value="Gekko" onclick='thirdQCheck()'> Gekko<br>
+        <input type="radio" id="wrongc2" name="question1" value="Chase" onclick='thirdQCheck()'> Chase<br>
+        <input type="radio" id="correct2" name="question1" value="Catboy" onclick='thirdQCheck()'> Catboy<br>
+        <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif2"/>
+        <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif2"/>
+        </form>
+        <!---------------------Question 4-------------------------------->
+        <form class = "quiz">
+        <p class = "questions">Q4: Who is this?</p>
+        <img src="https://yt3.ggpht.com/a-/AAuE7mA1Sl8LOxLB6X0BCdJKgsNDoaNgUxWyK6UlRA=s900-mo-c-c0xffffffff-rj-k-no" id="imagedefault"/>
+        <input type="radio" id="wronga3" name="question1" value="Mommy" onclick='fourthQCheck()'> Mommy<br>
+        <input type="radio" id="correct3" name="question1" value="Kombo" onclick='fourthQCheck()'> Kombo<br>
+        <input type="radio" id="wrongb3" name="question1" value="Panda" onclick='fourthQCheck()'> Panda<br>
+        <input type="radio" id="wrongc3" name="question1" value="Panda" onclick='fourthQCheck()'> Gus<br>
+        <input type="radio" id="wrongd3" name="question1" value="Daddy" onclick='fourthQCheck()'> Daddy<br>
+        <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif3"/>
+        <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif3"/>
+        </form>
+        <!---------------------Question 5-------------------------------->
+        <form class = "quiz">
+        <p class = "questions">Q5: Who is this?</p>
+        <img src="https://yt3.ggpht.com/a-/AAuE7mC0gLmTt6XpwVbD7zOggTdbRh3tNOt7_K2C3Q=s900-mo-c-c0xffffffff-rj-k-no" id="imagedefault"/>
+        <input type="radio" id="correct4" name="question1" value="Gus" onclick='fifthQCheck()'> Gus<br>
+        <input type="radio" id="wrongb4" name="question1" value="Ryan" onclick='fifthQCheck()'> Ryan<br>
+        <input type="radio" id="wrongc4" name="question1" value="RT" onclick='fifthQCheck()'> Red Titan<br>
+        <input type="radio" id="wrongd4" name="question1" value="Shark" onclick='fifthQCheck()'> Shark<br>
+        <input type="radio" id="wronga4" name="question1" value="Kombo" onclick='fifthQCheck()'> Kombo<br>
+        <img src="C:\Users\Kaleab\Pictures\wrong.gif" id="ankankgif4"/>
+        <img src="C:\Users\Kaleab\Pictures\correct.gif" id="correctgif4"/>
+        </form>
+    </form>
+        <div id = "after_submit">
+            <button onclick="check(), document.getElementById('button').style.display = 'none'" id="button">Submit</button>
+            <p id = "number_correct" style="font-size: 32px"></p>
+            <p id = "message"style="font-size: 32px"></p>
+        <audio id="aww">
+            <source src="C:\Users\Kaleab\Downloads\Aww Sound Effect.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="meh">
+            <source src="C:\Users\Kaleab\Downloads\Cartoon Sound Effects - Clapping & Laughter.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="yay">
+            <source src="C:\Users\Kaleab\Downloads\applause crowd cheering sound effect.mp3" type="audio/mpeg">
+        </audio>
+            <button onclick="retry()" id="retry">Next</button>
+        </div>
+    </body>
+</html>
+

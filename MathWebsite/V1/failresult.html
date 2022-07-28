@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>FAILED</title>
+ <audio id="sigh">
+     <source src="C:\Users\Kaleab\Downloads\Aww Sound Effect.mp3" type="audio/mpeg">
+ </audio>
+ <style>
+     body{
+      background-color: black;
+      font-family: Comic Sans MS;
+      color: gray;
+      text-align: center;
+     }
+     #final{
+      border: 3px solid lightgray;
+      width: 680px;
+      height: 320px;
+      border-radius: 8px;
+      color: red;
+      display: inline-block;
+     }
+     #print{
+      background-color: gray;
+      border: none;
+      color: black;
+      font-weight: bold;
+      padding: 30px 45px;
+      text-align: center;
+      font-size: 30px;
+      font-family: Comic Sans MS;
+     }
+ </style>
+ <script>
+  function retry(){
+      location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V1/startpage.html");
+  }   
+  function fail(){
+    document.getElementById("sigh").currentTime = 0;
+    document.getElementById("sigh").play();
+  }
+ </script>
+</head>    
+<body id="body" onload="fail()">
+<div id="container" style="text-align: center;">
+    <h1 style="; margin-top: 20px;">Result:</h1>
+    <h1 style="margin-top: 20px; font-size: 40px;">0 of 10</h1>
+    <div id="final">
+        <h1 style="font-size: 42px; margin-bottom: -60px;">Sorry</h1>
+        <h1 style="font-size: 120px;">0%</h1>
+    </div>
+</div>
+<button id="print" style="margin-top: 10px;" onclick="retry()">RETRY</button>
+</body>
+</html>

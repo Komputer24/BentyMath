@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Sewit Addition</title>
+ <audio id="ank">
+     <source src="C:\Users\Kaleab\Downloads\Wrong Buzzer - Sound Effect.mp3" type="audio/mpeg">
+ </audio>
+ <audio id="ding">
+     <source src="C:\Users\Kaleab\Downloads\Ding Sound Effect.mp3" type="audio/mpeg">
+ </audio>
+ <style>
+     body{
+      background-color: black;
+      font-family: Comic Sans MS;
+     }
+     #wrap{
+      margin: 100px 0px 0px 250px;;
+      color: white;
+      height: 200px;
+     }
+     .box{
+      border: 2px solid white;
+      width: 160px;
+      text-align: center;
+      background-color: gray;
+      color: black;
+      font-size: 120px;
+      border-radius: 4px;
+      float: left;
+     }
+     .numeral{
+      width: 160px;
+      text-align: center;
+      color: white;
+      font-size: 120px;
+      float: left;
+     }
+     #answer{
+      border: 2px solid white;
+      width: 160px;
+      text-align: center;
+      background-color: gray;
+      color: black;
+      font-size: 120px;
+      border-radius: 4px;
+      float: left;
+      font-family: Comic Sans MS;
+     }
+     #check{
+      margin-left: 570px;
+      background-color: gray;
+      border: none;
+      color: black;
+      font-weight: bold;
+      padding: 30px 45px;
+      text-align: center;
+      font-size: 30px;
+      font-family: Comic Sans MS;
+     }
+     input[type=number]::-webkit-inner-spin-button, 
+     input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none; 
+        margin: 0; 
+     }
+     /* Chrome, Safari and Opera syntax */
+    :-webkit-full-screen {
+      background-color: yellow;
+    }
+ </style>
+  <script>
+     var x = 1;
+     var score=0;
+     var numval1;
+     var numval2;
+     var correctanz;
+     var usersanz;
+     var r = 0;
+     var elem = document.documentElement;
+     var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+     function shuffle(array){
+         var currentIndex = array.length, temporaryValue, randomIndex;
+         while(0 !== currentIndex){
+            randomIndex = Math.floor(Math.random()*currentIndex);
+            currentIndex -= 1;
+            temporaryValue = array[currentIndex];
+            array[currentIndex] = array[randomIndex];
+            array[randomIndex] = temporaryValue;
+         }
+         return array;
+     }
+     shuffle(num);
+     function newQuestion(){
+        numval1 = document.getElementById("num1").innerHTML = 7;
+        numval2 = document.getElementById("num2").innerHTML = num[r]; 
+        r++;
+        correctanz = numval1 + numval2; 
+     }
+     function checkAnswer(){
+         usersanz = document.getElementById("answer");
+         usersanz.focus();
+         if(usersanz.value == ""){
+            alert("Put something");
+         }else{
+             if(usersanz.value == correctanz){
+                document.getElementById("ding").currentTime = 0.2;
+                document.getElementById("ding").play();
+                document.getElementById("answer").style.backgroundColor = "green";
+                setTimeout(function(){ document.getElementById("answer").style.backgroundColor = "lightgray"; }, 1000);
+                document.getElementById("answer").value = "";
+                score++;
+             }else{
+                document.getElementById("ank").currentTime = 2;
+                document.getElementById("ank").play();
+                document.getElementById("answer").style.backgroundColor = "red";
+                setTimeout(function(){ document.getElementById("answer").style.backgroundColor = "lightgray"; }, 1000);
+                document.getElementById("answer").value = "";
+             } 
+             if(x == 10){
+                if(score == 10){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/passresult3.html");  
+                }else if(score == 9){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result9V3.html"); 
+                }else if(score == 8){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result8V3.html"); 
+                }else if(score == 7){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result7V3.html"); 
+                }else if(score == 6){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result6V3.html"); 
+                }else if(score == 5){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result5V3.html"); 
+                }else if(score == 4){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result4V3.html"); 
+                }else if(score == 3){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result3V3.html"); 
+                }else if(score == 2){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result2V3.html"); 
+                }else if(score == 1){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/result1V3.html"); 
+                }else if(score == 0){
+                    location.assign("file:///C:/Users/Kaleab/Desktop/MathWebsite/V3/failresult3.html"); 
+                }
+             }else{
+                setTimeout(function(){ newQuestion(); x++;}, 10);
+             }
+         }
+    }
+     document.addEventListener('keydown', function(event) {
+        if(event.keyCode == 13) {
+            checkAnswer();
+        }
+     });
+ </script>
+</head>
+<body id="body" onload="newQuestion()">
+<h1 style="color: gray; text-align: center;">Simple is cute</h3>
+<div id="wrap">
+    <div id="num1" class="box"></div>
+    <div id="add" class="numeral">+</div>
+    <div id="num2" class="box"></div>
+    <div id="equal" class="numeral">=</div>
+    <input type="number" id="answer" autofocus="autofocus"></input>
+</div>
+<br>
+<button id="check" onclick="checkAnswer()">CHECK</button><br><br><br><br><br>
+<footer style="color: gray; text-align: center;"><i>Simple is cute!</i></footer>
+</body>
+</html>

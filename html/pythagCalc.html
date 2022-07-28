@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+     <header style="font-weight: bold;"><a href="https://bentymathupdated.klebcode.repl.co/index.html">Homepage</a></header>
+     <title>Pythagorean Calculator</title>
+     <link rel="stylesheet" href="https://bentymathupdated.klebcode.repl.co/css/pythagstyle.css">
+     <script src="https://bentymathupdated.klebcode.repl.co/js/pythagscript.js"></script>
+    </head>
+    <body>
+            <input type="number" class="squared" id="aSquared" placeholder="a²" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    type = "number"
+    maxlength = "2"></input>
+            <h1 class="operationSigns" id="additionSign">+</h1>
+            <input type="number" class="squared" id="bSquared" placeholder="b²" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+    type = "number"
+    maxlength = "2"></input>
+            <h1 class="operationSigns" id="equalSign">=</h1>
+            <input type="number" class="squared" id="cSquared" placeholder="c²"></input>
+            <button id="solve" onclick="calculate()">Solve</button>
+            <div style="position: absolute;">
+                <img src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_960,f_auto/Triangle_Rightangle_cwkxkm.jpg" id="rightTri">
+                <h1 id="a">a</h1>
+                <h1 id="b">b</h1>
+                <h1 id="c">c</h1> 
+            </div>
+    </body>
+</html>
