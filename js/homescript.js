@@ -67,12 +67,12 @@
                     level = n;
                     operation = "addition";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                    window.location.href = "https://beteselassie.com/BentyMath/html/mathquizlvl.html";
                 }else if(slctLvl[11] == true){
                     level = "random";
                     operation = "addition";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-   		    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/randomIndex.html";
+   		    window.location.href = "https://beteselassie.com/BentyMath/html/randomIndex.html";
    		}
             }
         }
@@ -82,12 +82,12 @@
                     level = n;
                     operation = "subtraction";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                    window.location.href = "https://beteselassie.com/BentyMath/html/mathquizlvl.html";
                 }else if(slctLvl[11] == true){
                     level = "random";
                     operation = "subtraction";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-   		    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/randomIndex.html";
+   		    window.location.href = "https://beteselassie.com/BentyMath/html/randomIndex.html";
                 }
             } 
           }
@@ -97,12 +97,12 @@
                     level = n;
                     operation = "division";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                    window.location.href = "https://beteselassie.com/BentyMath/html/mathquizlvl.html";
                 }else if(slctLvl[11] == true){
                     level = "random";
                     operation = "division";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-   		    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/randomIndex.html";
+   		    window.location.href = "https://beteselassie.com/BentyMath/html/randomIndex.html";
                 }
             }
           }
@@ -112,12 +112,12 @@
                     level = n;
                     operation = "multiplication";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                    window.location.href = "https://beteselassie.com/BentyMath/html/mathquizlvl.html";
                 }else if(slctLvl[11] == true){
                     level = "random";
                     operation = "multiplication";
                     window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-   		    window.location.href = "https://bentymathupdated.klebcode.repl.co/html/randomIndex.html";
+   		    window.location.href = "https://beteselassie.com/BentyMath/html/randomIndex.html";
                 }
             }
           }

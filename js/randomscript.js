@@ -52,28 +52,28 @@
             if(slctLvl[0] == true){
                 level = "0-2";
                 window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                window.location.href = "../html/mathquizlvl.html";
             }else if(slctLvl[1] == true){
                 level = "3-5";
                 window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                window.location.href = "../html/mathquizlvl.html";
             }else if(slctLvl[2] == true){
                 level = "6-8";
                 window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                window.location.href = "../html/mathquizlvl.html";
             }else if(slctLvl[3] == true){
                 level = "9-10";
                 window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                window.location.href = "../html/mathquizlvl.html";
             }
             else if(slctLvl[4] == true){
                 level = "doubles";
                 window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                window.location.href = "../html/mathquizlvl.html";
             }else if(slctLvl[5] == true){
                 level = "tens";
                 window.name = name + "/" + level + "/" + amount + "/" + correct + "/" + tenOrNot + "/" + operation;
-                window.location.href = "https://bentymathupdated.klebcode.repl.co/html/mathquizlvl.html";
+                window.location.href = "../html/mathquizlvl.html";
             }
         }
       else{

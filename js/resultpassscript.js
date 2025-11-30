@@ -15,7 +15,7 @@
       amount = 35;
   }
   function next(){
-      location.assign("https://bentymathupdated.klebcode.repl.co/index.html");
+      location.assign("https://beteselassie.com/BentyMath/index.html");
   } 
   function pass(){
     document.getElementById("cheer").currentTime = 1.5;

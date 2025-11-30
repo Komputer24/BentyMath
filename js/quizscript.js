@@ -10,7 +10,7 @@ var divNum = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 18, 16, 14, 12, 10];
 var otherDivNum = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 18, 16, 14, 12, 10, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 18, 16, 14, 12, 10, 2, 4, 6, 8, 10,];
 var specialNum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var othernum = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 8, 7, 6, 5];
-var tensnum = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 50, 40, 30, 20, 10]
+var tensnum = [10, 20, 30, 40, 50, 60, 70, 80, 90, /*100*/ 50, 40, 30, 20, 10]
 var helpUsed = 3;
 var checked = [false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false,false];
 var muted = true;
@@ -31,12 +31,19 @@ var smallTime = false;
 if(smallTime == true){
    var timeLeft = 14;
 }else{
-   var timeLeft = 25;
+   var timeLeft = 5;
 }
 var timerId = setInterval(countdown, 1000);
 var completeWrng = false;
+function playSound(el, start = 0) {
+    try {
+        el.pause();              // stop any previous play
+        el.currentTime = start;  // jump to start position
+        el.play().catch(() => {}); // ignore AbortError safely
+    } catch(e) {}
+}
 function countdown() {
-      if (timeLeft == -1) {
+      if (timeLeft == 0) {
         clearTimeout(timerId);
         completeWrng = true;
         checkAnswer();
@@ -190,14 +197,14 @@ function newQuestion(){
     }
     
     r++;
-    document.getElementById("beads").style.display = "none";
-    document.getElementById("check").style.marginTop = "0px";
-    document.getElementById("check").style.marginLeft = "570px";
-    document.getElementById("check").style.height = "100px";
-    document.getElementById("check").style.width = "180px";
-    document.getElementById("check").style.float = "none";
-    document.getElementById("check").style.padding = "30px 45px";
-    document.getElementById("wrap").style.margin = "100px 0px 0px 250px";
+    // document.getElementById("beads").style.display = "none";
+    // document.getElementById("check").style.marginTop = "0px";
+    // document.getElementById("check").style.marginLeft = "570px";
+    // document.getElementById("check").style.height = "100px";
+    // document.getElementById("check").style.width = "180px";
+    // document.getElementById("check").style.float = "none";
+    // document.getElementById("check").style.padding = "30px 45px";
+    //document.getElementById("wrap").style.margin = "100px 0px 0px 250px";
     document.getElementById("help").disabled = false;
     for(var i = 0; i < checked.length; i++){
         if(checked[i] == true){
@@ -210,9 +217,9 @@ function newQuestion(){
     transition();
     // TIMER
     if(smallTime == true){
-        timeLeft = 15;
+        timeLeft = 5;
     }else{
-        timeLeft = 25;
+        timeLeft = 5;
     }
     countdown();
     if(operation == "addition"){
@@ -236,16 +243,14 @@ function checkAnswer(){
     alert("Write your answer in the space");
  }else{
      if(usersanz.value == correctanz && (usersanz.value !== "")){
-        document.getElementById("ding").currentTime = 0.2;
-        document.getElementById("ding").play();
+        playSound(document.getElementById("ding"), 0.2);
         document.getElementById("answer").style.backgroundColor = "green";
         setTimeout(function(){ document.getElementById("answer").style.backgroundColor = "gray"; }, 1000);
         newTransition()
         document.getElementById("answer").value = "";
         score++;
      }else if(usersanz.value !== correctanz || (completeWrng == true)){
-        document.getElementById("ank").currentTime = 2;
-        document.getElementById("ank").play();
+        playSound(document.getElementById("ank"), 0.2);
         document.getElementById("answer").style.backgroundColor = "red";
         setTimeout(function(){ document.getElementById("answer").style.backgroundColor = "gray"; }, 1000);
         newTransition()
@@ -262,11 +267,11 @@ function checkAnswer(){
                         info[4] = 0;
                         window.name = info[0] + "/" + info[1] + "/" + info[2] + "/" + info[3] + "/" + info[4] + "/" + info[5];
                         if(score == 35){
-                           window.location.href = "https://bentymathupdated.klebcode.repl.co/html/passresult.html";
+                           window.location.href = "https://beteselassie.com/BentyMath/html/passresult.html";
                         }else if(score == 0){
-                           window.location.href = "https://bentymathupdated.klebcode.repl.co/html/failresult.html";
+                           window.location.href = "https://beteselassie.com/BentyMath/html/failresult.html";
                         }else{
-                           window.location.href = "https://bentymathupdated.klebcode.repl.co/html/userresult.html";
+                           window.location.href = "https://beteselassie.com/BentyMath/html/userresult.html";
                         }
                     }
                 }
@@ -284,11 +289,11 @@ function checkAnswer(){
                         window.name = info[0] + "/" + info[1] + "/" + info[2] + "/" + info[3] + "/" + info[4] + "/" + info[5];
                         // QUESTIONS
                         if(score == 15){
-                           window.location.href = "https://bentymathupdated.klebcode.repl.co/html/passresult.html";
+                           window.location.href = "https://beteselassie.com/BentyMath/html/passresult.html";
                         }else if(score == 0){
-                           window.location.href = "https://bentymathupdated.klebcode.repl.co/html/failresult.html";
+                           window.location.href = "https://beteselassie.com/BentyMath/html/failresult.html";
                         }else{
-                           window.location.href = "https://bentymathupdated.klebcode.repl.co/html/userresult.html";
+                           window.location.href = "https://beteselassie.com/BentyMath/html/userresult.html";
                         }
                     }
                 }
@@ -308,16 +313,16 @@ function helpBtn(){
         if(helpUsed > 0){
             helpUsed--;  
         }
-        document.getElementById("hintsLeft").innerHTML = helpUsed;   
-        document.getElementById("beads").style.display = "block";
-        document.getElementById("check").style.marginTop = "-40px";
-        document.getElementById("check").style.marginLeft = "898px";
-        document.getElementById("check").style.height = "60px";
-        document.getElementById("check").style.width = "165px";
-        document.getElementById("check").style.float = "left";
-        document.getElementById("check").style.padding = "0px 0px 0px 0px";
-        document.getElementById("wrap").style.margin = "40px 0px 0px 250px";
-        document.getElementById("help").disabled = true;
+        // document.getElementById("hintsLeft").innerHTML = helpUsed;   
+        // document.getElementById("beads").style.display = "block";
+        // document.getElementById("check").style.marginTop = "-40px";
+        // document.getElementById("check").style.marginLeft = "898px";
+        // document.getElementById("check").style.height = "60px";
+        // document.getElementById("check").style.width = "165px";
+        // document.getElementById("check").style.float = "left";
+        // document.getElementById("check").style.padding = "0px 0px 0px 0px";
+        // document.getElementById("wrap").style.margin = "40px 0px 0px 250px";
+        // document.getElementById("help").disabled = true;
     }else{
         alert("No more hints!");
     }
@@ -390,9 +395,9 @@ function transitionStart(){
     document.getElementById("timer").style.backgroundColor = "black";
     // TIMER
     if(smallTime == true){
-        document.getElementById("timer").style.transition = "height 15s"; 
+        document.getElementById("timer").style.transition = "height 5s"; 
     }else{
-        document.getElementById("timer").style.transition = "height 25s";
+        document.getElementById("timer").style.transition = "height 5s";
     }
     document.getElementById("timer").style.float = "left";
 }

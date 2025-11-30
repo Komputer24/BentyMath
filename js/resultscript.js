@@ -13,7 +13,7 @@
       percent = Math.floor((100/35) * correct);
   }
   function retry(){
-      location.assign("https://bentymathupdated.klebcode.repl.co/index.html");
+      location.assign("https://beteselassie.com/BentyMath/index.html");
   }
   function fail(){
     document.getElementById("sigh").currentTime = 0;

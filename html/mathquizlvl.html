@@ -3,36 +3,36 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Addition</title>
-	<audio id="ank">
-		<source src="https://bentymathupdated.klebcode.repl.co/audio/buzzsfx.mp3" type="audio/mpeg">
-	</audio>
-	<audio id="ding">
-		<source src="https://bentymathupdated.klebcode.repl.co/audio/dingsfx.mp3" type="audio/mpeg">
-	</audio>
-	<link rel="stylesheet" href="https://bentymathupdated.klebcode.repl.co/css/quizstyle.css">
-	<script src="https://bentymathupdated.klebcode.repl.co/js/quizscript.js"></script>
+	<title>Math Problems</title>
+	<link rel="stylesheet" href="../css/quizstyle.css">
+	<script src="../js/quizscript.js"></script>
 </head>
 
 <body id="body" onload="newQuestion()">
-	<button id="help" onclick="helpBtn()">?</button>
-	<h3 id="hintsLeft">3</h3>
-	<button id="mute" onclick="muteBtn()">🔊</button>
-	<h1 style="color: white; margin-left: 42%;" id="questionNum">Question: 1</h1>
-	<div id="wrap">
-		<div id="num1" class="box"></div>
-		<div id="sign" class="numeral">+</div>
-		<div id="num2" class="box"></div>
-		<div id="equal" class="numeral">=</div>
-		<input type="number" id="answer" autofocus="autofocus"></input>
-		<div style="border: 3px solid gray" id="border">
-			<div id="timer"></div>
-		</div>
-		<h1 id="numTimer" style="font-size: 100px;">50</h1>
+	<audio id="ank" src="https://beteselassie.com/BentyMath/audio/buzzsfx.mp3" preload="auto"></audio>
+    <audio id="ding" src="https://beteselassie.com/BentyMath/audio/dingsfx.mp3" preload="auto"></audio>
+
+	<div id="topBar">
+    	<button id="help" onclick="helpBtn()" style="display:none;">?</button>
+    	<h3 id="hintsLeft" style="display:none;">3</h3>
+    	<h1 style="color: white;" id="questionNum">Question: 1</h1>
 	</div>
-	<br>
-	<button id="check" onclick="checkAnswer()">CHECK</button>
-	<div id="beads" style="font-size: 40px;">
+	<button id="mute" onclick="muteBtn()">🔊</button>
+	<div id="wrap">
+        <div id="equationRow">
+    		<div id="num1" class="box"></div>
+    		<div id="sign" class="numeral">+</div>
+    		<div id="num2" class="box"></div>
+    		<div id="equal" class="numeral">=</div>
+    		<input type="number" id="answer" autofocus="autofocus"></input>
+    		<div style="border: 3px solid gray" id="border">
+    			<div id="timer"></div>
+    		</div>
+    		<h1 id="numTimer" style="font-size: 100px;">#</h1>
+    	</div>
+    	<button id="check" onclick="checkAnswer()">CHECK</button>
+	</div>
+	<div id="beads" style="font-size: 40px;display:none;">
 		<table style="width: 200px; height: 200px;user-select: none;" id="grid">
 			<tr>
 				<td id="sq0" onclick="selected('sq0')">/</td>
@@ -69,6 +69,15 @@
 			</tr>
 		</table>
 	</div>
+	
+	<script>
+    window.addEventListener("load", () => {
+      const ank_sound = document.getElementById("ank");
+      const ding_sound = document.getElementById("ding");
+      ank_sound.load();
+      ding_sound.load();
+    });
+  </script>
 </body>
 
 </html>
